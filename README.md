@@ -1,4 +1,4 @@
-# TodoIst home assistan lovelace card
+# TodoIst Home Assistant lovelace card
 
 This is a custom lovelace card for displaying a todoist calendar in Home Assistant.
 
@@ -19,5 +19,5 @@ cards:
     title: TodoIst inbox
 ```
 
-## Example
-![alt text](example.png "Logo Title Text 1")
+## Screenshot
+![alt text](example.png)
