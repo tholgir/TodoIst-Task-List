@@ -11,13 +11,17 @@ class TodoistTaskList extends HTMLElement {
     }
 
     const entityId = this.config.entity;
-    const state = hass.states[entityId];
-    const hasstasksList = hass.states[entityId].attributes.all_tasks;
+    const state = hass.states[entityId].state;
 
-    const stateStr = state ? state.state : 'unavailable';
+    if (state == 'off') {
+      this.content.innerHTML = '<i>none</i>';
+    }
+    else{
+      const tasksList = hass.states[entityId].attributes.all_tasks;
 
-    this.splitTasks(hasstasksList)
-    this.updateHtml(this.TodoistTaskList)
+      this.splitTasks(tasksList);
+      this.updateHtml(this.TodoistTaskList);
+    }
   }
 
   splitTasks(tasksList){
@@ -51,6 +55,7 @@ class TodoistTaskList extends HTMLElement {
       throw new Error('You need to define an entity');
     }
     this.config = config;
+
   }
 
 }
