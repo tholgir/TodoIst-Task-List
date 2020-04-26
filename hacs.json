@@ -1,0 +1,6 @@
+{
+    "name": "todoist-task-list",
+    "content_in_root": false,
+    "render_readme": true,
+    "filename": "todoist-task-list.js"
+  }
