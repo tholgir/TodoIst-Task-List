@@ -8,7 +8,7 @@ This is a custom lovelace card for displaying a todoist calendar in Home Assista
 3. reference the js file in ui-lovelace.yaml:
 ``` yaml
 resources:
-  - url: /local/community/todoist-task-list/todoist-task-list.js?v=0.0.1
+  - url: /local/community/todoist-task-list/todoist-task-list.js?v=1.0.1
     type: js
 ```
 4. add the custom card configuration to ui-lovelace.yaml
@@ -24,7 +24,7 @@ cards:
 3. reference the js file in ui-lovelace.yaml:
 ``` yaml
 resources:
-  - url: /local/community/todoist-task-list/todoist-task-list.js?v=0.0.1
+  - url: /local/community/todoist-task-list/todoist-task-list.js?v=1.0.1
     type: js
 ```
 4. add the custom card configuration to ui-lovelace.yaml
