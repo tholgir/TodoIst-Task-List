@@ -4,7 +4,7 @@ class TodoistTaskList extends HTMLElement {
       const card = document.createElement('ha-card');
       card.header = this.config.title;
       this.content = document.createElement('div');
-      this.content.style.padding = '0 16px 16px';
+      this.content.style.padding = '16px 16px 16px';
 
       card.appendChild(this.content);
       this.appendChild(card);
@@ -19,35 +19,27 @@ class TodoistTaskList extends HTMLElement {
     else{
       const tasksList = hass.states[entityId].attributes.all_tasks;
 
-      this.splitTasks(tasksList);
-      this.updateHtml(this.TodoistTaskList);
+      this.updateHtml(tasksList);
     }
   }
 
-  splitTasks(tasksList){
-    let splitTasks;
-    splitTasks = tasksList.toString().split(",");
-
-    return this.TodoistTaskList= splitTasks
-  }
-
-  formatTask(task){
-    this.content.innerHTML += `<div class=task>${task}</div>`;
+  formatTask(task) {
+    return this.content.innerHTML += `<div class=task>${task}</div>`;
   }
 
   updateHtml(tasksList) {
-      this.content.innerHTML = `
-        <style>
-          .task {
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            font: "var(--primary-font-family)";
-        </style>
-      `;
+    this.content.innerHTML = `
+      <style>
+        .task {
+          margin-bottom: 10px;
+          color: var(--text-color);
+          font: "var(--primary-font-family)";
+      </style>
+    `;
 
-      tasksList.forEach((task) => {
-        document.innerHTML = this.formatTask(task);
-      });
+    tasksList.forEach((task) => {
+      this.content.innerHTML = this.formatTask(task);
+    });
   }
 
   setConfig(config) {
